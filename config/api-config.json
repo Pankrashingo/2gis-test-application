@@ -1,5 +1,5 @@
 {
   "apiUrl" : "http://catalog.api.2gis.ru",
-  "apiKey" : "", //ключ API вставить сюда
+  "apiKey" : "",
   "apiVersion" : "1.3"
 }
