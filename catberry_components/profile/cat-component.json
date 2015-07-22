@@ -1,0 +1,4 @@
+{
+	"name": "profile",
+	"template": "./template.hbs"
+}

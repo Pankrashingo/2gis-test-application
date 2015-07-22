@@ -1,0 +1,35 @@
+{{#if hasResults}}
+	<div class="result">
+
+		<div class="results clearfix">
+			<div class="results-content">
+				<ol class="results-org">
+					{{#each result}}
+						<li class="results-org-row">
+							<div class="number"></div>
+							<h4><a href="/profile?id={{id}}&hash={{hash}}">{{name}}</a></h4>
+							{{#if micro_comment}}
+								<div class="adv-comment">{{{micro_comment}}}
+									<div class="fas-msg">{{{fas_warning}}}</div>
+								</div>
+							{{/if}}
+							<address class="address">{{city_name}}, {{address}}</address>
+							{{#if rubrics}}
+								<ul class="rubrics">
+									{{#each rubrics}}
+										<li>{{this}}{{#unless @last}}, {{/unless}}</li>
+									{{/each}}
+								</ul>
+							{{/if}}
+						</li>
+					{{/each}}
+				</ol>
+			</div>
+			<div class="results-sidebar">
+				<div class="results-map" id="map"></div>
+			</div>
+		</div>
+	</div>
+{{else}}
+	<h2>Ничего не найдено, попробуйте уточнить запрос.</h2>
+{{/if}}

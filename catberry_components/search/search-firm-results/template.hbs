@@ -1,0 +1,55 @@
+{{#if hasResults}}
+	<div class="result">
+		<h2>Вы искали: &laquo;{{what}}&raquo; в &laquo;{{where}}&raquo;</h2>
+		<p>Найдено фирм: {{total}}</p>
+
+		{{#if did_you_mean}}
+		<div class="did-you-mean">
+			<p>Возможно, вы имели ввиду:</p>
+			<ul>
+				{{#each did_you_mean.rubrics}}
+					<li><a href="/firm?rubric={{name}}&where={{../where}}">{{name}}</a></li>
+				{{/each}}
+			</ul>
+		</div>
+		{{/if}}
+
+		<div class="results clearfix">
+			<div class="results-content">
+				<ol class="results-org">
+					{{#each result}}
+						<li class="results-org-row">
+							<div class="number">{{number}}</div>
+							<h4><a href="/profile?id={{id}}&hash={{hash}}&what={{../what}}&where={{../where}}">{{name}}</a></h4>
+							{{#if micro_comment}}
+								<div class="adv-comment">{{{micro_comment}}}
+									<div class="fas-msg">{{{fas_warning}}}</div>
+								</div>
+							{{/if}}
+							<address class="address">{{city_name}}, {{address}}</address>
+							{{#if rubrics}}
+								<ul class="rubrics">
+									{{#each rubrics}}
+										<li>{{this}}{{#unless @last}}, {{/unless}}</li>
+									{{/each}}
+								</ul>
+							{{/if}}
+							{{#if firm_group_flag}}
+								<a href="/filials?firm_id={{firm_group.id}}">Все филиалы</a> ({{firm_group.count}})
+							{{/if}}
+						</li>
+					{{/each}}
+				</ol>
+			</div>
+			<div class="results-sidebar">
+				<div class="results-map" id="map"></div>
+			</div>
+		</div>
+
+		{{#if paginator}}
+			{{{paginator}}}
+		{{/if}}
+	</div>
+{{else}}
+	<h2>Ничего не найдено, попробуйте уточнить запрос.</h2>
+{{/if}}

@@ -1,0 +1,6 @@
+{
+	"title": "2GIS Test Application",
+	"server": {
+		"port": 3000
+	}
+}

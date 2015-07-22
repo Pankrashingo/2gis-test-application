@@ -1,0 +1,18 @@
+<div class="search-bar">
+	<form class="search-form" role="search">
+		<div class="cell what">
+			<label>Что:</label>
+			<input class="text-field form-control" placeholder="Мото" name="what" value="{{what}}" required>
+			<span class="tip">Укажите название или сферу деятельности организации</span>
+		</div>
+		<div class="cell where">
+			<label>Где:</label>
+			<input class="text-field form-control" placeholder="Новосибирск" name="where" value="{{where}}" required>
+			<span class="tip">Обязательно укажите название города</span>
+		</div>
+		<input name="page" value="{{page}}" hidden>
+		<input type="submit" class="btn btn-primary btn-lg submit" value="Найти"/>
+	</form>
+</div>
+<cat-loader id="search-progress"></cat-loader>
+

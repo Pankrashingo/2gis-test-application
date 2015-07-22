@@ -1,0 +1,23 @@
+# Catberry files
+__BrowserBundle.js
+node_modules
+public/bundle.js
+
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+*.lnk
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+*.log
+/.idea/

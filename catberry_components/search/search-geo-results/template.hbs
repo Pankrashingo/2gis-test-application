@@ -1,0 +1,25 @@
+{{#if hasResults}}
+	<div class="result">
+		<h2>По названию &laquo;{{query}}&raquo; найдены следующие геообъекты:</h2>
+
+		<div class="results clearfix">
+			<div class="results-content">
+				<ol class="results-org">
+					{{#each result}}
+						<li class="results-org-row">
+							<div class="number"></div>
+							<h4>{{name}}</h4>
+						</li>
+					{{/each}}
+				</ol>
+			</div>
+			<div class="results-sidebar">
+				<div class="results-map" id="map"></div>
+			</div>
+		</div>
+
+		<div id="pagination" class="pagination"></div>
+	</div>
+{{else}}
+	<h2>Ничего не найдено, попробуйте уточнить запрос.</h2>
+{{/if}}

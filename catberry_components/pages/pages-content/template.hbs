@@ -1,0 +1,17 @@
+{{#unless isActive.geo}}
+	<cat-search-firm-form id="pages-content-firm" cat-store="search/Firm" ></cat-search-firm-form>
+	{{#if isActive.firm}}
+		<cat-search-firm-results id="pages-content-firm-results" cat-store="search/Firm" ></cat-search-firm-results>
+	{{/if}}
+	{{#if isActive.profile}}
+		<cat-profile id="pages-content-profile" cat-store="Profile" ></cat-profile>
+	{{/if}}
+	{{#if isActive.filials}}
+		<cat-filials id="pages-content-filial" cat-store="Filials" ></cat-filials>
+	{{/if}}
+{{/unless}}
+{{#if isActive.geo}}
+	<cat-search-geo-form id="pages-content-geo" cat-store="search/Geo" ></cat-search-geo-form>
+	<cat-search-geo-results id="pages-content-geo-results" cat-store="search/Geo" ></cat-search-geo-results>
+{{/if}}
+

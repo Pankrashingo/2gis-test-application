@@ -1,0 +1,61 @@
+{{#if hasResults}}
+	<div class="result">
+		<h2>{{name}}</h2>
+		{{#if rubrics}}
+			<ul class="rubrics">
+				{{#each rubrics}}
+					<li>{{this}}{{#unless @last}}, {{/unless}}</li>
+				{{/each}}
+			</ul>
+		{{/if}}
+
+		<div class="results clearfix profile">
+			<div class="results-content">
+				{{#if firm_group_flag}}
+					<a href="/filials?firm_id={{firm_group.id}}">Посмотреть все филиалы</a> ({{#if firm_group.count}}{{firm_group.count}}{{/if}})
+				{{/if}}
+
+				<address class="address">{{city_name}}, {{address}}</address>
+				{{#if link}}
+					<a href="{{link.link}}">{{link.text}}</a>
+				{{/if}}
+				{{#if phones}}
+					<ul class="phone-info">
+						{{#each phones}}
+								<li>{{this}}</li>
+						{{/each}}
+					</ul>
+				{{/if}}
+				{{#if websites}}
+					<ul class="phone-info">
+						{{#each websites}}
+							<li><a href="{{value}}">{{alias}}</a></li>
+						{{/each}}
+					</ul>
+				{{/if}}
+				{{#if emails}}
+					<ul class="phone-info">
+						{{#each emails}}
+							<li><a href="mailto:{{this}}">{{this}}</a></li>
+						{{/each}}
+					</ul>
+				{{/if}}
+
+				{{#if article}}
+					<div class="description">{{{article}}}</div>
+				{{/if}}
+				{{#if fas_warning_article}}
+					<div class="fas-msg">{{{fas_warning_article}}}</div>
+				{{/if}}
+
+			</div>
+			<div class="results-sidebar">
+				<div class="results-map" id="map"></div>
+			</div>
+		</div>
+
+		<div id="pagination" class="pagination"></div>
+	</div>
+{{else}}
+	<h2>Ничего не найдено, попробуйте уточнить запрос.</h2>
+{{/if}}
